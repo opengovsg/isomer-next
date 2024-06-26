@@ -3,20 +3,24 @@ import { Button } from '@opengovsg/design-system-react'
 import { HStack, VStack, Text } from '@chakra-ui/react'
 import { type NextPageWithLayout } from '~/lib/types'
 import _ from 'lodash'
-import { DashboardTable } from '~/features/dashboard/DashboardTable'
+import DashboardTable from '~/features/dashboard/DashboardTable'
 import PageCreateModal from '~/features/editing-experience/components/PageCreateModal'
+import React from 'react'
+import { usePathname, useRouter } from 'next/navigation'
 
-const Dashboard: NextPageWithLayout = () => {
+function Dashboard(): NextPageWithLayout {
   const {
     isOpen: isPageCreateModalOpen,
     onOpen: onPageCreateModalOpen,
     onClose: onpageCreateModalClose,
   } = useDisclosure()
+  const { asPath, pathname } = useRouter()
+  console.log(asPath)
   return (
     <VStack bgColor="#F3F5F7" w="100%" p="1.75rem" minH="100vh">
       <Text
         alignSelf="flex-start"
-        textColor="base.content.default"
+        textColor="ba`se.content.default"
         textStyle="h5"
       >
         My Pages
